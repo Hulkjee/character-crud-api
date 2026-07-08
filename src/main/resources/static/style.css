@@ -1,0 +1,31 @@
+.card-img-top {
+    height: 350px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.navbar {
+    background-color: #4B2E83;
+}
+
+.quick-info-header {
+    background-color: #4B2E83;
+}
+
+.footer {
+    background-color: #4B2E83;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.btn-primary {
+    background-color: #4B2E83;
+    border-color: #4B2E83;
+}
+
+.btn-primary:hover {
+    background-color: #3A2268;
+    border-color: #3A2268;
+}
