@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Harry Potter Gallery</a>
+            <a class="navbar-brand" href="/">Harry Potter Gallery</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav">
@@ -30,19 +30,19 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="details.html">Details</a>
+                        <a class="nav-link" href="/">Details</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="new-character-form.html">Add Character</a>
+                        <a class="nav-link" href="/new">Add Character</a>
                     </li>
 
                 </ul>
@@ -78,108 +78,40 @@
         <div class="row">
 
             <!-- Character cards will go here -->
-            <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <img src="images/harry.jpg" class="card-img-top" alt="Harry Potter">
+           <#list characters as character>
 
-        <div class="card-body">
-            <h5 class="card-title">Harry Potter</h5>
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
 
-            <p class="card-text">
-                <strong>Universe:</strong> Harry Potter<br>
-                <strong>Role:</strong> Wizard<br>
-                <strong>House:</strong> Gryffindor
-            </p>
+            <img src="/images/harry.jpg"
+                 class="card-img-top"
+                 alt="${character.name}">
 
-            <a href="details.html" class="btn btn-primary">
-                View Details
-            </a>
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    ${character.name}
+                </h5>
+
+                <p class="card-text">
+                    <strong>Role:</strong>
+                    ${character.role!"Not provided"}
+                    <br>
+
+                    <strong>House:</strong>
+                    ${character.house!"Not provided"}
+                </p>
+
+                <a href="/Chars/${character.characterId?c}"
+                   class="btn btn-primary">
+                    View Details
+                </a>
+
+            </div>
         </div>
     </div>
-</div>
 
-
-<div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <img src="images/herm.jpg" class="card-img-top" alt="Hermione Granger">
-
-        <div class="card-body">
-            <h5 class="card-title">Hermione Granger</h5>
-
-            <p class="card-text">
-                <strong>Universe:</strong> Harry Potter<br>
-                <strong>Role:</strong> Witch<br>
-                <strong>House:</strong> Gryffindor
-            </p>
-
-            <a href="details.html" class="btn btn-primary">
-                View Details
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <img src="images/ron.webp" class="card-img-top" alt="Ron Weasley">
-
-        <div class="card-body">
-            <h5 class="card-title">Ron Weasley</h5>
-
-            <p class="card-text">
-                <strong>Universe:</strong> Harry Potter<br>
-                <strong>Role:</strong> Wizard<br>
-                <strong>House:</strong> Gryffindor
-            </p>
-
-            <a href="details.html" class="btn btn-primary">
-                View Details
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <img src="images/dumbledore.jpg" class="card-img-top" alt="Albus Dumbledore">
-
-        <div class="card-body">
-            <h5 class="card-title">Albus Dumbledore</h5>
-
-            <p class="card-text">
-                <strong>Universe:</strong> Harry Potter<br>
-                <strong>Role:</strong> Headmaster<br>
-                <strong>House:</strong> Gryffindor
-            </p>
-
-            <a href="details.html" class="btn btn-primary">
-                View Details
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="col-lg-4 col-md-6 mb-4">
-    <div class="card h-100">
-        <img src="images/snape.webp" class="card-img-top" alt="Severus Snape">
-
-        <div class="card-body">
-            <h5 class="card-title">Severus Snape</h5>
-
-            <p class="card-text">
-                <strong>Universe:</strong> Harry Potter<br>
-                <strong>Role:</strong> Professor<br>
-                <strong>House:</strong> Slytherin
-            </p>
-
-            <a href="details.html" class="btn btn-primary">
-                View Details
-            </a>
-        </div>
-    </div>
-</div>
+</#list>
 
 
 
