@@ -18,10 +18,14 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Harry Potter Gallery</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="/">
+                Harry Potter Gallery
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -31,10 +35,6 @@
 
                     <li class="nav-item">
                         <a class="nav-link active" href="/">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Details</a>
                     </li>
 
                     <li class="nav-item">
@@ -77,54 +77,60 @@
 
         <div class="row">
 
-            <!-- Character cards will go here -->
-           <#list characters as character>
+            <#list characters as character>
 
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
+                <div class="col-lg-4 col-md-6 mb-4">
 
-            <img src="/images/harry.jpg"
-                 class="card-img-top"
-                 alt="${character.name}">
+                    <div class="card h-100">
 
-            <div class="card-body">
+                        <img src="/images/harry.jpg"
+                             class="card-img-top"
+                             alt="${character.name}">
 
-                <h5 class="card-title">
-                    ${character.name}
-                </h5>
+                        <div class="card-body">
 
-                <p class="card-text">
-                    <strong>Role:</strong>
-                    ${character.role!"Not provided"}
-                    <br>
+                            <h5 class="card-title">
+                                ${character.name}
+                            </h5>
 
-                    <strong>House:</strong>
-                    ${character.house!"Not provided"}
-                </p>
+                            <p class="card-text">
 
-                <a href="/Chars/${character.characterId?c}"
-                   class="btn btn-primary">
-                    View Details
-                </a>
+                                <strong>Role:</strong>
+                                ${character.role!"Not provided"}
 
-            </div>
+                                <br>
+
+                                <strong>House:</strong>
+                                ${character.house!"Not provided"}
+
+                            </p>
+
+                            <a href="/Chars/${character.characterId?c}"
+                               class="btn btn-primary">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </#list>
+
         </div>
+
     </div>
 
-</#list>
-
-
-
-
-        </div>
-
-    </div>
+    <!-- Footer -->
     <footer class="footer text-center mt-5 py-4">
-    <p class="mb-0">© 2026 Harry Potter Character Gallery.</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
+        <p class="mb-0">
+            © 2026 Harry Potter Character Gallery.
+        </p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -7,7 +7,7 @@
     <title>Add Character</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -15,24 +15,21 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Harry Potter Gallery</a>
+            <a class="navbar-brand" href="/">Harry Potter Gallery</a>
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="details.html">Details</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="new-character-form.html">Add Character</a>
+                        <a class="nav-link active" href="/new">Add Character</a>
                     </li>
                 </ul>
             </div>
@@ -42,15 +39,20 @@
     <!-- Form -->
     <div class="container mt-5">
 
-        <h1 class="text-center mb-4">Add a New Harry Potter Charater</h1>
+        <h1 class="text-center mb-4">Add a New Harry Potter Character</h1>
 
         <div class="card shadow p-4">
 
-            <form>
+            <form action="/create" method="post">
 
                 <div class="mb-3">
                     <label class="form-label">Character Name</label>
-                    <input type="text" class="form-control" placeholder="Enter character name">
+                    <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        placeholder="Enter character name"
+                        required>
                 </div>
 
                 <div class="mb-3">
@@ -60,13 +62,18 @@
 
                 <div class="mb-3">
                     <label class="form-label">Role</label>
-                    <input type="text" class="form-control" placeholder="Wizard, Professor, Student...">
+                    <input
+                        type="text"
+                        name="role"
+                        class="form-control"
+                        placeholder="Wizard, Professor, Student..."
+                        required>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">House</label>
 
-                    <select class="form-select">
+                    <select name="house" class="form-select" required>
                         <option>Gryffindor</option>
                         <option>Slytherin</option>
                         <option>Ravenclaw</option>
@@ -81,8 +88,12 @@
 
                 <div class="mb-3">
                     <label class="form-label">Short Description</label>
-                    <textarea class="form-control" rows="4"
-                        placeholder="Write a short description about the character"></textarea>
+                    <textarea
+                            name="description"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Write a short description about the character"
+                            required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">

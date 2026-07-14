@@ -29,6 +29,17 @@ public class CharacterUiController {
         return "index";
     }
 
+    // Display all characters at /characters
+    @GetMapping("/characters")
+    public String getAllCharacters(Model model) {
+         model.addAttribute(
+                 "characters",
+                characterService.getAllCharacters()
+        );
+
+        return "index";
+    }
+
     // Display About page
     @GetMapping("/about")
     public String about() {
